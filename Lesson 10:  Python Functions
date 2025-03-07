@@ -1,0 +1,41 @@
+# Function with no arguments and no return value
+def greet():
+    print("Hello!")
+
+greet()
+
+# Function with arguments and a return value
+def add(x, y):
+    return x + y
+
+result = add(5, 3)
+print(result)
+
+# Function with default argument
+def power(base, exponent=2):
+    return base ** exponent
+
+print(power(2))
+print(power(2, 3))
+
+# Function with variable number of arguments
+def multiply(*args):
+    result = 1
+    for num in args:
+        result *= num
+    return result
+
+print(multiply(1, 2, 3, 4))
+
+# Recursive function
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))
+
+# Lambda function (anonymous function)
+square = lambda x: x ** 2
+print(square(4))
