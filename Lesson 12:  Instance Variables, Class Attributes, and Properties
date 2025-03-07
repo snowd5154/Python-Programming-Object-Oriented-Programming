@@ -1,0 +1,33 @@
+class MyClass:
+    class_attribute = "This is a class attribute"
+
+    def __init__(self, instance_variable):
+        self.instance_variable = instance_variable
+
+    @property
+    def my_property(self):
+        return self.instance_variable
+    
+    @my_property.setter
+    def my_property(self, value):
+        self.instance_variable = value
+
+# Creating instances
+instance1 = MyClass("Instance 1 variable")
+instance2 = MyClass("Instance 2 variable")
+
+# Accessing attributes
+print(instance1.instance_variable) # Output: Instance 1 variable
+print(instance2.instance_variable) # Output: Instance 2 variable
+print(MyClass.class_attribute)   # Output: This is a class attribute
+print(instance1.class_attribute) # Output: This is a class attribute
+
+# Modifying class attribute
+MyClass.class_attribute = "Modified class attribute"
+print(instance1.class_attribute) # Output: Modified class attribute
+print(instance2.class_attribute) # Output: Modified class attribute
+
+# Using properties
+print(instance1.my_property) # Output: Instance 1 variable
+instance1.my_property = "New value for instance 1"
+print(instance1.my_property) # Output: New value for instance 1
