@@ -1,0 +1,13 @@
+class MyClass:
+    def __init__(self):
+        self._internal_var = 10  # Single underscore: internal use
+        self.__mangled_var = 20  # Double underscore: name mangling
+
+    def get_mangled_var(self):
+        return self.__mangled_var
+
+obj = MyClass()
+print(obj._internal_var)  # Accessing single underscore attribute (allowed but discouraged)
+# print(obj.__mangled_var)  # This would raise an AttributeError
+print(obj._MyClass__mangled_var) # Accessing double underscore attribute using mangled name
+print(obj.get_mangled_var()) # Accessing double underscore attribute using a method
