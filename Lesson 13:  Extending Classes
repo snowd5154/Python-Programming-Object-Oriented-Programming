@@ -1,0 +1,23 @@
+class ParentClass:
+    def __init__(self, name):
+        self.name = name
+
+    def greet(self):
+        print(f"Hello, my name is {self.name}")
+
+class ChildClass(ParentClass):
+    def __init__(self, name, age):
+        super().__init__(name)  # Call the parent class's constructor
+        self.age = age
+
+    def greet(self):  # Override the parent class's method
+      super().greet()
+      print(f"and I am {self.age} years old.")
+
+# Create instances of the classes
+parent = ParentClass("Alice")
+child = ChildClass("Bob", 30)
+
+# Call the methods
+parent.greet()  # Output: Hello, my name is Alice
+child.greet()  # Output: Hello, my name is Bob and I am 30 years old.
