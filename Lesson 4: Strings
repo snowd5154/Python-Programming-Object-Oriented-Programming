@@ -1,0 +1,12 @@
+a='Python\nis\easy\to\learn'
+
+length_with_escape=len(a)
+b=a.replace("\\" , "\\\\")
+
+# Get length of updated string using len() function
+length_without_escape=len(b)
+
+# Get count of escape sequence in Python
+count_escape=length_without_escape-length_with_escape
+
+print('Count of escape sequence: ',count_escape)
